@@ -14,11 +14,11 @@ int main(void)
 	{
 		printf("%dis positive/n", n);
 	}
-	else if(n = 0)
+	if(n == 0)
 	{
 		printf("%dis zero/n", n);
 	}
-	else
+	if(n < 0)
 	{
 		printf("%d is negative/n", n);
 	}
