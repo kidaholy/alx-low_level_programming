@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- *main-main block
- *Description:print -putchar in a new line
- *Return:this program returns zero
- */
+* main - print _putchar
+* is written by mbah
+* Return: 0
+*/
 int main(void)
 {
 _putchar('_');
@@ -17,3 +17,4 @@ _putchar('r');
 _putchar('\n');
 return (0);
 }
+
