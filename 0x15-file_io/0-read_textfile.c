@@ -9,22 +9,27 @@
  * read_textfile - is a function that reads and prints a text file
  * @filename: is the name of the file to be read
  * @letters: is the number of letters it has printed
- * Return: the numbers are printed
+ * Return: the number of letters prnted or 0 if it failed
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int d, i, j;
-	char *bef;
+	int fd, i, j;
+	char *buf;
 
 	if (!filename)
 		return (0);
 
-	d = open(filename, O_RDONLY);
+	fd = open(filename, O_RDONLY);
 
-	if (d == -1)
+	if (fd == -1)
 		return (0);
 
-	bef = malloc(sizeof(char) * letters);
+	buf = malloc(sizeof(char) * letters);
+
+	if (!buf)
+		return (0);
+
+	i = read(fd, buf, letters);
 	if (i < 0)
 	{
 		free(buf);
